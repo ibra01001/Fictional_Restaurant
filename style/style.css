@@ -1,0 +1,95 @@
+.carousel-inner .carousel-item img {
+  width: 100%;
+  height: 760px;
+  object-fit: cover;
+}
+
+#hero {
+  object-fit: cover;
+  width: 100%;
+  height: 760px;
+  z-index: -999;
+  filter: brightness(50%);
+  transition: filter 0.3s ease;
+  
+
+}
+
+#herotext {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-size: 3rem;
+  z-index: 999;
+  font-family: "Lavishly Yours", cursive;
+  font-weight: 800;
+  font-style: normal;
+}
+
+#herobutton {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  z-index: 999;
+}
+
+#hero:hover {
+  filter: brightness(70%);
+  
+}
+
+.d-block {
+  filter: brightness(50%);
+}
+
+.title {
+  
+  font-weight: 800;
+  font-style: normal;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 20px;
+}
+
+#para{
+  font-weight: 400;
+  font-size:  1.2rem;
+  padding: 20px;
+  position:relative;
+  
+}
+
+.aboutimg{
+  
+  width:50%;
+  height: 100vh;
+  object-fit: cover;
+  
+}
+
+.para{
+  padding: 20px;
+}
+.cards{
+  display: flex;
+  
+  
+  
+  padding: 20px;
+
+}
+.card{
+  
+  margin: 10px;
+  
+}
