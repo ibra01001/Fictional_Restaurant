@@ -284,6 +284,70 @@ section.container-fluid {
   background: var(--l)
 }
 
+.contact-form-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: transparent;
+  border-radius: 0
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px
+}
+
+.form-label {
+  font: 600 .95rem sans-serif;
+  color: var(--d);
+  letter-spacing: .5px;
+  margin-bottom: 8px;
+  display: block
+}
+
+.form-control {
+  border: 1px solid #ddd;
+  border-radius: 0 !important;
+  padding: 12px 15px;
+  font-size: .95rem;
+  color: var(--t);
+  background: #fff;
+  transition: all .3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.form-control:focus {
+  border-color: var(--g);
+  background: #fff;
+  color: var(--t);
+  box-shadow: 0 0 0 .2rem rgba(212, 175, 55, .15)
+}
+
+.form-control::placeholder {
+  color: #999;
+  font-style: italic
+}
+
+.btn-submit {
+  background: var(--g) !important;
+  border: 2px solid var(--g) !important;
+  color: var(--b) !important;
+  font-weight: 600 !important;
+  letter-spacing: .5px;
+  padding: 10px 24px !important;
+  border-radius: 0 !important;
+  transition: all .3s ease;
+  width: 100%;
+  cursor: pointer
+}
+
+.btn-submit:hover {
+  background: var(--b) !important;
+  border-color: var(--b) !important;
+  color: #fff !important
+}
+
 @media(max-width:1199px) {
   .card {
     flex: 0 1 calc(50% - 30px)
@@ -386,6 +450,19 @@ section.container-fluid {
   .carousel-caption p {
     font-size: .85rem
   }
+
+  .contact-form-container {
+    padding: 30px 15px
+  }
+
+  .form-label {
+    font-size: .9rem
+  }
+
+  .form-control {
+    font-size: .9rem;
+    padding: 10px 12px
+  }
 }
 
 @media(max-width:480px) {
@@ -456,5 +533,23 @@ section.container-fluid {
 
   .carousel-caption p {
     font-size: .8rem
+  }
+
+  .contact-form-container {
+    padding: 20px 10px
+  }
+
+  .form-label {
+    font-size: .85rem
+  }
+
+  .form-control {
+    font-size: .85rem;
+    padding: 8px 10px
+  }
+
+  .btn-submit {
+    padding: 10px 30px;
+    font-size: .9rem
   }
 }
