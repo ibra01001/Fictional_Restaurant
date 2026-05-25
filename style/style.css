@@ -1,8 +1,35 @@
+:root {
+  --d: #1a1a1a;
+  --b: #0f0f0f;
+  --g: #d4af37;
+  --c: #f5f1e8;
+  --lg: #eeebe1;
+  --t: #333;
+  --l: #fff
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+body {
+  background: var(--l);
+  color: var(--t);
+  font: 1rem/1.6 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: .3px
+}
+
 .carousel-inner .carousel-item img {
   width: 100%;
   height: 760px;
   object-fit: cover;
+  position: relative;
+  filter: brightness(50%);
 }
+
+
 
 #hero {
   object-fit: cover;
@@ -10,9 +37,11 @@
   height: 760px;
   z-index: -999;
   filter: brightness(50%);
-  transition: filter 0.3s ease;
-  
+  transition: filter .3s ease
+}
 
+#hero:hover {
+  filter: brightness(75%)
 }
 
 #herotext {
@@ -20,13 +49,15 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
+  color: #fff;
   text-align: center;
   font-size: 3rem;
   z-index: 999;
   font-family: "Lavishly Yours", cursive;
-  font-weight: 800;
-  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, .3)
 }
 
 #herobutton {
@@ -34,62 +65,396 @@
   top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: transparent;
-  border: 2px solid white;
-  color: white;
-  padding: 10px 20px;
-  font-size: 1.2rem;
+  background: var(--g);
+  border: 2px solid var(--g);
+  color: var(--b);
+  padding: 12px 32px;
+  font: 600 1rem/1 sans-serif;
+  letter-spacing: 1px;
   z-index: 999;
+  border-radius: 0;
+  transition: all .3s ease
 }
 
-#hero:hover {
-  filter: brightness(70%);
-  
+#herobutton:hover {
+  background: transparent;
+  color: #fff;
+  border-color: #fff
 }
 
 .d-block {
-  filter: brightness(50%);
+  position: relative
 }
 
 .title {
-  
-  font-weight: 800;
-  font-style: normal;
+  font-weight: 700;
   position: relative;
   z-index: 1;
   text-align: center;
-  padding: 20px;
+  padding: 40px 20px;
+  font-size: 2.5rem;
+  color: var(--d);
+  letter-spacing: 1px;
+  font-family: "Lavishly Yours", cursive
 }
 
-#para{
+.title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: var(--g);
+  margin: 15px auto 0;
+  border-radius: 0
+}
+
+#para {
   font-weight: 400;
-  font-size:  1.2rem;
-  padding: 20px;
-  position:relative;
-  
+  font-size: 1rem;
+  padding: 40px 30px;
+  color: var(--t);
+  line-height: 1.8;
+  letter-spacing: .4px;
+  text-align: justify
 }
 
-.aboutimg{
-  
-  width:50%;
+.aboutimg {
+  width: 100%;
   height: 100vh;
   object-fit: cover;
-  
+  border-radius: 0;
+  filter: grayscale(100%);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .1);
+  transition: all .3s ease
 }
 
-.para{
-  padding: 20px;
+.aboutimg:hover {
+  box-shadow: 0 15px 60px rgba(0, 0, 0, .15)
 }
-.cards{
+
+.para {
+  padding: 40px 20px;
+  align-items: center
+}
+
+.cards {
   display: flex;
-  
-  
-  
-  padding: 20px;
-
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 50px 20px;
+  background: var(--lg);
+  margin-top: 20px
 }
-.card{
-  
-  margin: 10px;
-  
+
+.card {
+  margin: 0;
+  flex: 0 1 calc(33.333% - 30px);
+  border: none;
+  background: #fff;
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, .08);
+  width: 18rem;
+  padding: 0;
+  padding-left: calc(var(--bs-gutter-x)*.5);
+  padding-right: 0
+}
+
+.card-img-top {
+  width: 100%;
+  height: 250px;
+  object-fit: cover
+}
+
+.card-body {
+  padding: 25px;
+  background: #fff
+}
+
+.card-title {
+  font-weight: 700;
+  color: var(--d);
+  font-size: 1.3rem;
+  letter-spacing: .5px;
+  margin-bottom: 12px;
+  font-family: "Lavishly Yours", cursive
+}
+
+.card-text {
+  font-size: .95rem;
+  color: #666;
+  line-height: 1.7;
+  letter-spacing: .3px;
+  margin-bottom: 12px
+}
+
+.card-text strong {
+  color: var(--g);
+  font-weight: 700;
+  font-size: 1.1rem
+}
+
+.card .btn-primary {
+  background: var(--g);
+  border: 2px solid var(--g);
+  color: var(--b);
+  font-weight: 600;
+  letter-spacing: .5px;
+  padding: 10px 24px;
+  border-radius: 0;
+  transition: all .3s ease;
+  width: 100%
+}
+
+.card .btn-primary:hover {
+  background: var(--b);
+  border-color: var(--b);
+  color: #fff
+}
+
+.navbar {
+  background: var(--l) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100
+}
+
+.navbar-brand {
+  font-family: "Lavishly Yours", cursive;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--g) !important;
+  letter-spacing: 1px;
+  transition: all .3s ease
+}
+
+.navbar-brand:hover {
+  color: var(--d) !important
+}
+
+.nav-link {
+  color: var(--t) !important;
+  font-weight: 500;
+  letter-spacing: .5px;
+  margin: 0 15px;
+  transition: all .3s ease;
+  position: relative
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--g);
+  transition: width .3s ease
+}
+
+.nav-link:hover {
+  color: var(--g) !important
+}
+
+.nav-link:hover::after {
+  width: 100%
+}
+
+footer {
+  background: var(--d);
+  color: var(--c);
+  text-align: center;
+  padding: 30px 20px;
+  font: 500 1rem/1.5 sans-serif;
+  letter-spacing: 1px
+}
+
+footer p {
+  margin: 0
+}
+
+section {
+  position: relative
+}
+
+section.container-fluid {
+  background: var(--l)
+}
+
+@media(max-width:1199px) {
+  .card {
+    flex: 0 1 calc(50% - 30px)
+  }
+
+  #herotext {
+    font-size: 2.3rem
+  }
+
+  .title {
+    font-size: 2.2rem;
+    padding: 30px 20px
+  }
+}
+
+@media(max-width:991px) {
+  .card {
+    flex: 0 1 calc(50% - 30px)
+  }
+
+  .para {
+    display: flex;
+    flex-direction: column
+  }
+
+  #para {
+    width: 100% !important;
+    padding: 30px 20px;
+    font-size: .95rem
+  }
+
+  .aboutimg {
+    width: 100% !important;
+    height: auto;
+    min-height: 300px;
+    border-radius: 6px
+  }
+
+  #herotext {
+    font-size: 1.8rem
+  }
+
+  .title {
+    font-size: 1.8rem;
+    padding: 25px 15px
+  }
+
+  .cards {
+    gap: 25px;
+    padding: 40px 15px
+  }
+}
+
+@media(max-width:767px) {
+  .card {
+    flex: 0 1 100%;
+    max-width: 320px
+  }
+
+  .cards {
+    padding: 25px 10px;
+    gap: 20px
+  }
+
+  #herotext {
+    font-size: 1.4rem;
+    top: 40%
+  }
+
+  #herobutton {
+    top: 65%;
+    padding: 10px 24px;
+    font-size: .95rem
+  }
+
+  .title {
+    font-size: 1.6rem;
+    padding: 25px 15px
+  }
+
+  .title::after {
+    width: 60px
+  }
+
+  #para {
+    font-size: .95rem;
+    padding: 20px 15px;
+    text-align: left
+  }
+
+  .carousel-inner .carousel-item img,
+  #hero {
+    height: 400px
+  }
+
+  .carousel-caption h5 {
+    font-size: 1.3rem
+  }
+
+  .carousel-caption p {
+    font-size: .85rem
+  }
+}
+
+@media(max-width:480px) {
+  .card {
+    flex: 0 1 100%;
+    max-width: 100%
+  }
+
+  .cards {
+    padding: 15px 10px;
+    gap: 15px
+  }
+
+  .card-img-top {
+    height: 200px
+  }
+
+  .card-body {
+    padding: 20px
+  }
+
+  .card-title {
+    font-size: 1.1rem
+  }
+
+  .card-text {
+    font-size: .9rem
+  }
+
+  #herotext {
+    font-size: 1.2rem;
+    top: 35%
+  }
+
+  #herobutton {
+    top: 60%;
+    padding: 8px 20px;
+    font-size: .9rem
+  }
+
+  .title {
+    font-size: 1.4rem;
+    padding: 20px 10px
+  }
+
+  .title::after {
+    width: 50px;
+    margin: 10px auto 0
+  }
+
+  #para {
+    font-size: .9rem;
+    padding: 10px
+  }
+
+  .carousel-inner .carousel-item img,
+  #hero {
+    height: 300px
+  }
+
+  .navbar-brand {
+    font-size: 1rem
+  }
+
+  .carousel-caption h5 {
+    font-size: 1rem
+  }
+
+  .carousel-caption p {
+    font-size: .8rem
+  }
 }
